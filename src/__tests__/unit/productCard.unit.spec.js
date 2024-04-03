@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
 const product = {
   title: 'Camiseta Polo',

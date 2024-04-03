@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function Home() {
   const doSearch = () => {};
   return (
-    <main className="my-8">
+    <main data-testid="productList" className="my-8">
       <Search doSearch={doSearch} />
       <div className="container mx-auto px-6">
         <h3 className="text-gray-700 text-2x1 font-medium">Wrist Watch</h3>

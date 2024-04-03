@@ -1,6 +1,6 @@
 // const { default: Search } = require("@/components/Search");
 import userEvent from '@testing-library/user-event';
-import Search from '../components/Search';
+import Search from '../../components/Search';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 const doSearch = jest.fn();

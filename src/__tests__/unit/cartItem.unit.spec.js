@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import CartItem from '../components/CartItem';
+import CartItem from '../../components/CartItem';
 
 const product = {
   title: 'Camiseta Polo',
