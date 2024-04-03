@@ -1,15 +1,19 @@
 module.exports = {
-  collectCoverage: false,
+  collectCoverage: true,
   // on node 14.x coverage provider v8 offers good speed and more or less good report
   coverageProvider: 'v8',
+  // collectCoverageFrom: [
+  //   '**/*.{js,jsx,ts,tsx}',
+  //   '!**/*.d.ts',
+  //   '!**/node_modules/**',
+  //   '!<rootDir>/out/**',
+  //   '!<rootDir>/.next/**',
+  //   '!<rootDir>/*.config.js',
+  //   '!<rootDir>/coverage/**',
+  // ],
   collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
-    '!**/*.d.ts',
-    '!**/node_modules/**',
-    '!<rootDir>/out/**',
-    '!<rootDir>/.next/**',
-    '!<rootDir>/*.config.js',
-    '!<rootDir>/coverage/**',
+    '<rootDir>/src/components/**/*.js',
+    '<rootDir>/src/app/**/*.js',
   ],
 
   moduleNameMapper: {
