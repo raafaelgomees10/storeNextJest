@@ -11,16 +11,17 @@
     "test:unit": "jest --config=jest-unit.config.js --coverage=false",
     "test:unit:watch": "jest --config=jest-unit.config.js --watch --coverage=false",
     "test:integration": "jest --config=jest-integration.config.js --coverage=false",
-    "test:integration:watch": "jest --config=jest-integration.config.js --watch --coverage=false",
+    "test:integration:watch": "jest --config=jest-integration.config.js --watchAll --coverage=false",
     "test:coverage": "jest --coverage"
   },
-  
   "dependencies": {
+    "axios": "^1.6.8",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.2",
     "@testing-library/user-event": "^14.5.2",
@@ -30,6 +31,7 @@
     "eslint-config-next": "14.1.4",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "miragejs": "^0.1.48",
     "postcss": "^8",
     "tailwindcss": "^3.3.0"
   }

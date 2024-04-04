@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "Camiseta Polo",
+        "price": 59.99
+    },
+    {
+        "id": 2,
+        "title": "Tenis Nike",
+        "price": 159.99
+    },
+    {
+        "id": 3,
+        "title": "Calça Jeans",
+        "price": 90
+    }
+]
