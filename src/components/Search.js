@@ -8,6 +8,14 @@ const Search = ({ doSearch }) => {
     doSearch(term);
   };
 
+  const handleInput = (e) => {
+    setTerm(e.target.value);
+
+    if (e.target.value === '') {
+      doSearch('');
+    }
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -27,7 +35,7 @@ const Search = ({ doSearch }) => {
       </span>
       <input
         value={term}
-        onChange={({ target }) => setTerm(target.value)}
+        onInput={handleInput}
         className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline"
         type="search"
         placeholder="Search"

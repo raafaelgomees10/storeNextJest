@@ -6,6 +6,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 const doSearch = jest.fn();
 
 describe('Search', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('Should render a form', () => {
     render(<Search doSearch={doSearch} />);
 
@@ -24,7 +28,7 @@ describe('Search', () => {
 
     await fireEvent.submit(form);
 
-    expect(doSearch).toHaveBeenCalledTimes(3);
+    expect(doSearch).toHaveBeenCalledTimes(1);
   });
 
   it('should call props.doSearch() with the user input', async () => {
@@ -38,5 +42,18 @@ describe('Search', () => {
     await fireEvent.submit(form);
 
     expect(doSearch).toHaveBeenCalledWith(inputText);
+  });
+
+  it('should all doSearch() when search input is cleared', async () => {
+    render(<Search doSearch={doSearch} />);
+
+    const inputText = 'some text here';
+    const input = screen.getByRole('searchbox');
+
+    await userEvent.type(input, inputText);
+    await userEvent.clear(input);
+
+    expect(doSearch).toHaveBeenCalledTimes(1);
+    expect(doSearch).toHaveBeenCalledWith('');
   });
 });
