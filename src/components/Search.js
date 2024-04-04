@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 
 const Search = ({ doSearch }) => {
   const [term, setTerm] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    doSearch(term);
+  };
+
   return (
     <form
-      onSubmit={doSearch(term)}
+      onSubmit={handleSubmit}
       name="search-form"
       className="mt-6 relative max-w-lg mx-auto"
     >
