@@ -14,6 +14,7 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/src/components/**/*.js',
     '<rootDir>/src/app/**/*.js',
+    '<rootDir>/src/hooks/**/*.js',
   ],
 
   moduleNameMapper: {
