@@ -32,10 +32,13 @@ const images = [
 export default {
   product: Factory.extend({
     title() {
-      return faker.helpers.fake('{{lorem.words}}');
+      return faker.commerce.product();
+      // return faker.helpers.fake('{{lorem.words}}');
+      // .product_description
     },
     price() {
-      return faker.helpers.fake('{{commerce.price}}');
+      return faker.commerce.price();
+      // return faker.helpers.fake('{{commerce.price}}');
     },
     image() {
       return images[randomNumber(10)];

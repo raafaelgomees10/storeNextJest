@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const useFetchProducts = () => {
@@ -16,7 +16,6 @@ export const useFetchProducts = () => {
         }
       })
       .catch((error) => {
-        // istanbul ignore next
         if (mounted) {
           setError(true);
         }

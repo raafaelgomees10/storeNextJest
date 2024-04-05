@@ -1,15 +1,9 @@
+'use client'; // This is a client component 👈🏽
+
 import { useFetchProducts } from '../hooks/use-fetch-products';
 import ProductCard from '../components/ProductCard';
 import Search from '../components/Search';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
-
-/* istanbul ignore next */
-if (process.env.NODE_ENV === 'development') {
-  /* istanbul ignore next */
-  require('../miragejs/server');
-  /* istanbul ignore next */
-}
 
 export default function Home() {
   const { products, error } = useFetchProducts();
