@@ -3,6 +3,7 @@ import { useCartStore } from '../store/cart';
 import Cart from '../components/Cart';
 import './globals.css';
 
+/* istalbul ignore next*/
 if (process.env.NODE_ENV === 'development') {
   require('../miragejs/server').makeServer();
 }

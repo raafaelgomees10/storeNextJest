@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "test:watch": "jest --watch --coverage=false",
     "test:unit": "jest --config=jest-unit.config.js --coverage=false",
     "test:unit:watch": "jest --config=jest-unit.config.js --watch --coverage=false",
     "test:integration": "jest --config=jest-integration.config.js --coverage=false",
