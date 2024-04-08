@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useCartStore } from '../store/cart';
 
 const CartItem = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
+  const { remove } = useCartStore((store) => store.actions);
 
   const increase = () => {
     setQuantity(quantity + 1);
@@ -22,11 +24,18 @@ const CartItem = ({ product }) => {
         />
         <div className="mx-3">
           <h3 className="text-sm text-gray-600">{product.title}</h3>
-          {/* <button data-testid="remove-button">remover</button> */}
+          <button
+            data-testid="remove-button"
+            onClick={() => {
+              remove(product);
+            }}
+          >
+            remover
+          </button>
           <div className="flex items-center mt-2">
             <button
               onClick={() => decrease()}
-              data-testid="-"
+              data-testid="decrease"
               className="text-gray-500 focus:outline-none focus:text-gray-600"
             >
               <svg
@@ -46,7 +55,7 @@ const CartItem = ({ product }) => {
             </span>
             <button
               onClick={() => increase()}
-              data-testid="+"
+              data-testid="increase"
               className="text-gray-500 focus:outline-none focus:text-gray-600"
             >
               <svg
