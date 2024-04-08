@@ -13,7 +13,7 @@ module.exports = {
   // ],
   collectCoverageFrom: [
     '<rootDir>/src/components/**/*.js',
-    '<rootDir>/src/app/**/*.js',
+    '<rootDir>/src/app/page.js',
     '<rootDir>/src/hooks/**/*.js',
     '<rootDir>/src/store/**/*.js',
   ],

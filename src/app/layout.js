@@ -3,13 +3,13 @@ import { useCartStore } from '../store/cart';
 import Cart from '../components/Cart';
 import './globals.css';
 
-/* istalbul ignore next*/
+/* istalbul ignore next */
 if (process.env.NODE_ENV === 'development') {
   require('../miragejs/server').makeServer();
 }
 
 export default function RootLayout({ children }) {
-  const toggleButton = useCartStore((store) => store.actions.toggle);
+  const { toggle } = useCartStore((store) => store.actions);
   return (
     <html lang="en">
       <body cz-shortcut-listen="false">
@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
                 </div>
                 <div className="flex items-center justify-end w-full">
                   <button
-                    onClick={() => toggleButton()}
+                    onClick={() => toggle()}
                     className="text-gray-600 focus:outline-none mx-4 sm:mx-0"
                   >
                     <svg
