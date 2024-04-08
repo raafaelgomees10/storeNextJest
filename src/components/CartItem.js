@@ -30,7 +30,7 @@ const CartItem = ({ product }) => {
               remove(product);
             }}
           >
-            remover
+            remove
           </button>
           <div className="flex items-center mt-2">
             <button

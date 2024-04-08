@@ -1,5 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { setAutoFreeze } from 'immer';
+import { useCartStore } from '../../store/cart';
 import CartItem from '../../components/CartItem';
+import userEvent from '@testing-library/user-event';
+import { render, renderHook, screen, fireEvent } from '@testing-library/react';
+
+setAutoFreeze(false);
 
 const product = {
   title: 'Camiseta Polo',
@@ -76,5 +81,22 @@ describe('CartItem', () => {
     await fireEvent.click(buttonDecrease);
 
     expect(quantity.textContent).toBe('0');
+  });
+
+  it('Should call remove() when remove buton is clicked', async () => {
+    const result = renderHook(() => useCartStore()).result;
+
+    const spy = jest.spyOn(result.current.actions, 'remove');
+
+    renderCartItem();
+
+    // const button = screen.getByTestId('remove-button');
+
+    const button = screen.getByRole('button', { name: /remove/i });
+
+    await userEvent.click(button);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith(product);
   });
 });

@@ -15,6 +15,7 @@ module.exports = {
     '<rootDir>/src/components/**/*.js',
     '<rootDir>/src/app/**/*.js',
     '<rootDir>/src/hooks/**/*.js',
+    '<rootDir>/src/store/**/*.js',
   ],
 
   moduleNameMapper: {

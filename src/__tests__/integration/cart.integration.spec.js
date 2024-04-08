@@ -35,11 +35,10 @@ describe('Cart', () => {
     expect(screen.getByTestId('cart')).toHaveClass('hidden');
   });
 
-  it('should remove css class "hidden" in the component', () => {
-    act(() => {
-      toggle();
-    });
+  it('should remove css class "hidden" in the component', async () => {
     render(<Cart />);
+    const button = screen.getByTestId('close-button');
+    await userEvent.click(button);
 
     expect(screen.getByTestId('cart')).not.toHaveClass('hidden');
   });
@@ -55,7 +54,7 @@ describe('Cart', () => {
     expect(spy).toHaveBeenCalledTimes(2);
   });
 
-  it('should call store toggle() twice', () => {
+  it('should display 2 products card', () => {
     const products = server.createList('product', 2);
 
     act(() => {
