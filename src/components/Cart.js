@@ -57,44 +57,26 @@ const Cart = () => {
         <CartItem product={product} key={product.id} />
       ))}
 
-      <form data-testid="checkout-form">
-        <div v-if="hasProducts" className="mt-4">
-          <hr />
-          <label
-            className="block text-gray-700 mt-2 text-sm font-bold mb-2"
-            htmlFor="email"
+      {hasProducts ? (
+        <button
+          data-testid="checkout-button"
+          type="submit"
+          className="flex items-center justify-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+        >
+          <span>Checkout</span>
+          <svg
+            className="h-5 w-5 mx-2"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            Email
-          </label>
-          <input
-            id="email"
-            v-model="email"
-            type="email"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-
-        {hasProducts ? (
-          <button
-            data-testid="checkout-button"
-            type="submit"
-            className="flex items-center justify-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
-          >
-            <span>Checkout</span>
-            <svg
-              className="h-5 w-5 mx-2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </button>
-        ) : null}
-      </form>
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </button>
+      ) : null}
     </div>
   );
 };
